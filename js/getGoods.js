@@ -7,7 +7,8 @@ const getGoods = () => {
         fetch('/db/db.json')
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                localStorage.setItem('goods', JSON.stringify(data));
+                console.log('Данные сохранены:', data);
             })
     }
 
@@ -19,13 +20,15 @@ const getGoods = () => {
         })
     })
     // localStorage.setItem('goods', JSON.stringify({name: 'all'}))
-    localStorage.setItem('goods', JSON.stringify([1,2,3,4,5]))
+    // localStorage.setItem('goods', JSON.stringify([1,2,3,4,5]))
     // console.log(JSON.parse(localStorage.getItem('goods'))); 
-    const goods = JSON.parse(localStorage.getItem('goods'))
-    console.log(goods);
+    // const goods = JSON.parse(localStorage.getItem('goods'))
+    // console.log(goods);
 
-    localStorage.removeItem('goods')
-    console.log(localStorage);
+    // localStorage.removeItem('goods')
+    // console.log(localStorage);
+
+
 }
 
 getGoods()
